@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>UniMatch</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="static/registration.css" rel="stylesheet" type="text/css">
+<link href="static/radio.css" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Caveat|Kaushan+Script|Gaegu" rel="stylesheet">
+<script type="text/javascript">
+  <script type="text/javascript">// <![CDATA[
+        function loading(){
+            $("#loading").show();
+            $("#content").hide();       
+        }
+// ]]></script>
+</script>
+<style type="text/css">
+  .container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: pink;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: orange;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: teal;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+</style>
+</head>
+<body>
+  <div class="main-w3layouts wrapper">
+    <h1 style="font-family: 'Kaushan Script', cursive;">Answer the quiz to proceed</h1><br>
+    <div class="main-agileinfo">
+      <div class="agileits-top">
+        <form action="/results" method="POST" style="color: white;font-family:'Gaegu', cursive; border-radius: 25%;">
+
+
+
+          <h2 style="color: white; font-size: 22px;"><span style="font-weight: 700;">1)&nbsp;</span>When do you feel your best?</h2><br>
+          <label class="container">Early Morning
+            <input type="radio" name="time" value="morning">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Late at Night
+            <input type="radio" name="time" value="night">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Noon/Early Evening
+            <input type="radio" name="time" value="noon">
+            <span class="checkmark"></span>
+          </label>
+          <br><br>
+
+          <h2 style="color: white; font-size: 22px;"><span style="font-weight: 700;">2)&nbsp;</span>Whom are you looking for?</h2><br>
+          <label class="container">Guys
+            <input type="radio" name="sex" value="guys">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Girls
+            <input type="radio" name="sex" value="girls">
+            <span class="checkmark"></span>
+          </label>
+          <br><br>
+
+          <h2 style="color: white; font-size: 22px;"><span style="font-weight: 700;">3)&nbsp;</span>According to you what personality you have?</h2><br>
+          <label class="container">Extroverted and Radiant
+            <input type="radio" name="personality" value="extrovert">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Introverted and Shy
+            <input type="radio" name="personality" value="introvert">
+            <span class="checkmark"></span>
+          </label>
+          <br><br>
+
+
+          <h2 style="color: white; font-size: 22px;"><span style="font-weight: 700;">4)&nbsp;</span>Pick one combination.</h2><br>
+          <label class="container">Light Blue / Yellow 
+            <input type="radio" name="color" value="blue">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Red / Orange
+            <input type="radio" name="color" value="red">
+            <span class="checkmark"></span>
+          </label>
+          <br><br>
+
+          <h2 style="color: white; font-size: 22px;"><span style="font-weight: 700;">5)&nbsp;</span>When someone excites you </h2><br>
+          <label class="container">You greet warmly and loudly
+            <input type="radio" name="welcome" value="loud">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">You make your welcome sober and silent
+            <input type="radio" name="welcome" value="silent">
+            <span class="checkmark"></span>
+          </label>
+          <br><br>
+
+          <h2 style="color: white; font-size: 22px;"><span style="font-weight: 700;">6)&nbsp;</span>If someone irritates you</h2><br>
+          <label class="container">You let that person do his/her thing
+            <input type="radio" name="irritate" value="let">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">You oppose him/her right away
+            <input type="radio" name="irritate" value="oppose">
+            <span class="checkmark"></span>
+          </label>
+          <br><br>
+
+          <h2 style="color: white; font-size: 22px;"><span style="font-weight: 700;">7)&nbsp;</span>What would you prefer to do?</h2><br>
+          <label class="container">NETFLIX
+            <input type="radio" name="timepass" value="netflix">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">NOVELS
+            <input type="radio" name="timepass" value="novels">
+            <span class="checkmark"></span>
+          </label>
+          <br><br>
+
+          <h2 style="color: white; font-size: 22px;"><span style="font-weight: 700;">8)&nbsp;</span>Choose honestly</h2><br>
+          <label class="container">Coke
+            <input type="radio" name="drink" value="coke">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Chai
+            <input type="radio" name="drink" value="chai">
+            <span class="checkmark"></span>
+          </label>
+          <br><br>
+
+          <h2 style="color: white; font-size: 22px;"><span style="font-weight: 700;">9)&nbsp;</span>What's your thing?</h2><br>
+          <label class="container">Mainstream movies with action, romance and suspense
+            <input type="radio" name="movies" value="mainstream">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Intellectual movies, horror movies, kind of outcast ones
+            <input type="radio" name="movies" value="outcast">
+            <span class="checkmark"></span>
+          </label>
+          <br><br>
+
+          <h2 style="color: white; font-size: 22px;"><span style="font-weight: 700;">10)&nbsp;</span>How you chill</h2><br>
+          <label class="container">Watch movies in theatres, visit cafes and have fun
+            <input type="radio" name="chill" value="outdoors">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Snuggle into bed and relax
+            <input type="radio" name="chill" value="indoors">
+            <span class="checkmark"></span>
+          </label>
+          <br><br>
+
+           <h2 style="color: white; font-size: 22px;"><span style="font-weight: 700;">2)&nbsp;</span>How can one contact you?</h2><br>
+          <label class="container">Insta Id/ Phone Number</label>
+            <input type="text" name="contactinfo" placeholder="">
+          <br><br>
+
+
+          <input type="submit" value="Submit" onclick="loading();">
+          </div>
+    <a href="{{url_for('logout')}}" style="color: white;"><h1 style="font-family: 'Gaegu', cursive;color:orange;font-size:20px;">LOGOUT</h1></a>
+    </div>
+        </form>
+      </div>
+    </div>
+    <!-- copyright -->
+    <div class="colorlibcopy-agile">
+      <p>© 2019 UniMatch. All rights reserved</p>
+    </div>
+    <!-- //copyright -->
+    <ul class="colorlib-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</body>
+</html>

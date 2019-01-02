@@ -1,0 +1,43 @@
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>UniMatch</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="static/registration.css" rel="stylesheet" type="text/css" media="all" />
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Caveat|Kaushan+Script|Gaegu" rel="stylesheet">
+
+</head>
+<body>
+	<div class="main-w3layouts wrapper">
+		<h1 style="font-family: 'Kaushan Script', cursive;">Here are the results!</h1><br>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<h1 style="font-family: 'Kaushan Script', cursive; font-size: 15px;">Hey {{ USERN }}!<br>
+				<span style="font-weight: 700;">{{ fmatch }}</span> is more likely to match with you.<br><br>
+				<img src="{{imgurl}}" alt="IMAGE" style="border-radius: 50%;height:200px;width:200px;margin:20px;" onerror="this.src='/static/profiles/default.jpg';"><br>
+				Get in touch with {{fmatch}} at their <span style="color:skyblue;font-weight: 700;">contact info: {{finfo}}</span></h1>
+			</div>
+		<a href="{{url_for('logout')}}" style="color: white;"><h1 style="font-family: 'Gaegu', cursive;color:orange;font-size:20px;">LOGOUT</h1></a>
+		<a href="{{url_for('contact')}}" style="color: white;"><h1 style="font-family: 'Gaegu', cursive;color:orange;font-size:20px;">Contact Us</h1></a>
+		</div>
+
+		<!-- copyright -->
+		<div class="colorlibcopy-agile">
+			<p>© 2019 UniMatch. All rights reserved</p>
+		</div>
+		<!-- //copyright -->
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+
+</body>
+
+</html>
+{% endblock %}

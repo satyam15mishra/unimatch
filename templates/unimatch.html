@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>UniMatch</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="static/registration.css" rel="stylesheet" type="text/css" media="all" />
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Caveat|Kaushan+Script|Gaegu" rel="stylesheet"> 
+<style type="text/css">
+		body, html {
+  margin: 0;
+  padding: 0;
+}
+#slider {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+}
+.slides {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.slide {
+  position: absolute;
+  list-style-type: none;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  top: 0;
+  left: 0;
+}
+.slide1 {background: black;}
+.slide2 {background: black;}
+.slide3 {background: black;}
+.slide4 {background: black;}
+.slide5 {background: black;}
+</style>
+</head>
+<body>
+<div class="row">
+	<div class="container-fluid">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<img src="static/logo.jpg" style="border-radius: 50%; display: block; margin-left: auto; margin-right: auto; width: 30%; height: 30%;">
+		</div>
+	</div>
+</div>
+
+	<div class="main-w3layouts wrapper">
+		<h1 style="font-family: 'Kaushan Script', cursive;">Welcome to UniMatch!</h1><br>
+		<h1 style="font-family: 'Caveat', cursive;font-size: 30px;">We believe in real connections :)</h1>
+		<div class="main-agileinfo">
+			<h2 style="color:white;font-family: 'Gaegu', cursive;"><span style="font-weight: 700">WHY</span> Unimatch?</h2>
+				<h2 style="color: white; font-family: 'Gaegu', cursive;">Unimatch is exclusively tailored according to the needs of students. Unimatch is backed up by an <u>artificially intelligent</u> algorithm specially modified for match making!<br>Apart from this, you are more likely to connect with people having the same interests as yours instead of just seeking for random people out there.</h2>
+		</div>
+
+			<img src="static/banner.jpg">
+
+
+		<div class="main-agileinfo">
+			<div id="slider">
+  <ul class="slides" style="color:white;">
+    <li class="slide slide1">slide1</li>
+    <li class="slide slide2">slide2</li>
+    <li class="slide slide3">slide3</li>
+    <li class="slide slide4">slide4</li>
+    <li class="slide slide5">slide5</li>
+    <li class="slide slide1">slide1</li>
+  </ul>
+</div>
+		</div>
+
+		<div class="main-agileinfo">
+			<h2 style="color:white;font-family: 'Gaegu', cursive;"><a href="{{url_for('do_registration')}}" style="color:orange;">REGISTER YOURSELF @ UNIMATCH</a></h2>
+		</div>
+		<div class="main-agileinfo">
+			<h2 style="color:white;font-family: 'Gaegu', cursive;"><a href="{{url_for('home')}}" style="color:orange;">Log In @ Unimatch</a></h2>
+		</div>
+
+		</div>
+
+		<!-- copyright -->
+		<div class="colorlibcopy-agile">
+			<p>© 2019 UniMatch. All rights reserved | Design by Satyam Mishra</p>
+		</div>
+		<!-- //copyright -->
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			
+		</ul>
+
+<script type="text/javascript">
+	var width = 100;
+var animation_speed = 700;
+var time_val = 3000;
+var current_slide = 1;
+
+var $slider = $('#slider');
+var $slide_container = $('.slides');
+var $slides = $('.slide');
+
+var interval;
+
+$slides.each(function(index){
+  $(this).css('left',(index*100)+'%');
+});
+
+function startSlider() {
+  interval = setInterval(function() {
+    $slide_container.animate({'left': '-='+(width+'%')}, animation_speed, function() {
+      if (++current_slide === $slides.length) {
+        current_slide = 1;
+        $slide_container.css('left', 0);
+      }
+    });
+  }, time_val);
+}
+
+startSlider();
+</script>
+</body>
+
+</html>

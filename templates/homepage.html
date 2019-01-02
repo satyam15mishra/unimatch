@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>UniMatch</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="static/registration.css" rel="stylesheet" type="text/css" media="all" />
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Caveat|Kaushan+Script" rel="stylesheet"> 
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+{% block body %}
+{% if session['logged_in'] %}
+<p>You're logged in already!</p>
+{% else %}
+
+<div class="row">
+	<div class="container-fluid">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<img href="{{url_for('home')}}" src="static/logo.jpg" style="border-radius: 50%; display: block; margin-left: auto; margin-right: auto; width: 30%; height: 30%;">
+		</div>
+	</div>
+</div>
+
+	<div class="main-w3layouts wrapper">
+		<h1 style="font-family: 'Kaushan Script', cursive;">Welcome to UniMatch!</h1><br>
+		<h1 style="font-family: 'Caveat', cursive;">Login to UniMatch</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form action="/login" method="POST">
+					<input class="text" type="text" name="username" placeholder="Username" required="">
+
+					<input class="text" type="password" name="password" placeholder="Password" required="" style="margin-top: 25px;">
+						
+						<div class="clear"> </div>
+					</div>
+					<input type="submit" value="Log In">
+					<div class="colorlibcopy-agile">
+		<p>
+		New User?<br>
+		<a href="{{ url_for('do_registration') }}">Click here to register.</a>
+		</p>
+		</div>
+
+				</form>
+			</div>
+		</div>
+		<!-- copyright -->
+		<div class="colorlibcopy-agile">
+			<p>© 2019 UniMatch. All rights reserved | Design by Satyam Mishra</p>
+		</div>
+		<!-- //copyright -->
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			
+		</ul>
+	</div>
+
+
+
+
+{% endif %}
+{% endblock %}
+
+</body>
+</html>
+
